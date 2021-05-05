@@ -1,6 +1,6 @@
 :root {
-  /* declare a variable with `--` syntax */
-  --med-red: #980000;
+
+  --chosen-Color: #535353;
   --light: #fff;
   --navlink-color: #040504;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 .main-content {
-  background: linear-gradient(rgba(2,0,36,1) 0%, rgba(152,0,0,1) 35%, rgba(128,128,128,1) 100%);
+  background: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 35%, rgba(128,128,128,1) 100%);
 }
 
   
@@ -22,7 +22,7 @@ header {
   align-items: center;
   padding: 1%;
   /* use CSS var() function to reference a variable created above */
-  background-color: var(--med-red);
+  background-color: var(--chosen-Color);
   color: var(--navlink-color);
   padding-right: 5%;
   font-style: oblique;
@@ -35,7 +35,11 @@ h1 {
   font-size: 200%;
 }
 
-/* CANNOT GET SPAN TO APPEAR */
+h1::first-letter {
+  font-size: 250%;
+  color: #8d0000;
+}
+
 
 .hidden-header-message {
   display: none;
@@ -50,6 +54,17 @@ a[href*='.css']::after {
   display: inline-block;
   margin-left: 3px;
 }
+
+/* 
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+/*  */
+nav {
+  padding-inline-start: 2%;
+}
+*/
 
 
 nav ul {
@@ -79,7 +94,7 @@ main {
 footer {
   display: flex;
   justify-content: center;
-  color: var(--navlink-color );
+  color: whitesmoke;
   
 }
 
@@ -102,8 +117,13 @@ footer {
   font-weight: 100%;
   padding-bottom: 5%;
 }
+
+.about-me img {
+  max-height: 200px ;
+  max-width: 400px ;
+}
   
-img {
+.contact-info img {
   max-height: 200px ;
   max-width: 400px ;
 }
@@ -123,4 +143,19 @@ img {
 
 }
 
+#applications {
+  font-weight: bolder;
+  display: inline;
+}
 
+@media screen and (max-width: 768px) {
+  /* Use flex-direction to stack the navbar, sidebar, and body */
+  main,
+  nav {
+    flex-direction: column;
+  }
+  /* Make the sidebar stack below the body */
+  aside {
+    order: 2;
+  }
+}
